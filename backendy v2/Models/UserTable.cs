@@ -13,18 +13,18 @@ namespace Backendy.Models
 
         [Required]
         [Column("Username", TypeName = "VARCHAR(255)")]
-        public string Username { get; set; }
+        public required string Username { get; set; }
 
         [Required]
         [Column("Password", TypeName = "VARCHAR(255)")]
-        public string Password { get; set; }
+        public required string Password { get; set; }
 
         [Column("User_icon", TypeName = "VARCHAR(255)")]
-        public string UserIcon { get; set; }
+        public required string UserIcon { get; set; }
 
         [Required]
         [Column("Email", TypeName = "VARCHAR(255)")]
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
     }
 }

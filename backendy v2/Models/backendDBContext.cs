@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using backendy_v2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backendy.Models
 {
@@ -12,5 +13,7 @@ namespace Backendy.Models
         public DbSet<moneySystem> money_system { get; set; }
         public DbSet<UserTable> user_table { get; set; }
         public DbSet<CommentTable> comment_table { get; set; }
+        public DbSet<fishTable> fish_table { get; set; }
+        public DbSet<treasureTable> treasure_table { get; set; }
     }
 }

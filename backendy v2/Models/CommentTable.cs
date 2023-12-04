@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Backendy.Models
 {
@@ -12,19 +13,18 @@ namespace Backendy.Models
         public int CommentId { get; set; }
 
         [Required]
-        [Column("Username", TypeName = "VARCHAR(255)")]
-        public string Username { get; set; }
-
-        [Required]
         [Column("text", TypeName = "VARCHAR(255)")]
-        public string Text { get; set; }
+        public required string Text { get; set; }
 
-        //[Column("creation_date")]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        //public DataType CreationDate { get; set; }
+        [Column("creation_date")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime CreationDate { get; set; }
 
-        //[Column("user_icon", TypeName = "VARCHAR(255)")]
-        //public string UserIcon { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual required UserTable User { get; set; }
     }
 
 }
